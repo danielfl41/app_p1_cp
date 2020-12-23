@@ -1,0 +1,7 @@
+{
+  "name": "app_p1_cp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
