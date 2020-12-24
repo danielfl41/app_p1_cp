@@ -29,3 +29,7 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+/resources/android
+/resources/ios
+/android
+/ios
