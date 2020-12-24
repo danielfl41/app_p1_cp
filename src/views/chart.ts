@@ -120,19 +120,20 @@ export default defineComponent({
 				]);
 				if (response1.length > 0) {
 					const unit = response1[0].unit.toLowerCase();
+					chartUnit.value = unit;
 					switch (unit) {
 						case "%": {
 							apexOptions.value["yaxis"].labels.formatter = (value: number) => `${value}%`;
 							break;
 						}
 						case "us$": {
+							chartUnit.value += " (miles de millones)";
 							apexOptions.value["yaxis"].labels.formatter = (value: number) =>
 								currencyFormatter.format(value / 1e9);
 							break;
 						}
 					}
 					chartTitle.value = response1[0].name;
-					chartUnit.value = unit;
 					apexSeries.value[0].name = response1[0].country.name;
 					apexSeries.value[0].data = response1
 						.filter((indicator) => indicator.value !== null)
